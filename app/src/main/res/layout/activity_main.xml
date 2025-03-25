@@ -9,7 +9,6 @@
     android:padding="4dp"
     tools:context=".MainActivity">
 
-
     <EditText
         android:id="@+id/etTask"
         android:layout_width="match_parent"
