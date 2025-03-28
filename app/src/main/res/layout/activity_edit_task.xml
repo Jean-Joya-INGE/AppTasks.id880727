@@ -10,18 +10,19 @@
         android:layout_height="wrap_content"
         android:minHeight="48dp"
         android:padding="4dp"
-        android:hint="Editar tarea"/>
+        android:hint="@string/etEditTask"
+        android:text=""/>
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Guardar Cambios"/>
+        android:text="@string/btnSave"/>
 
     <Button
         android:id="@+id/btnDelete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Eliminar Tarea"
+        android:text="@string/btnDelete"
         android:backgroundTint="@android:color/holo_red_light"/>
 </LinearLayout>

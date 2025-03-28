@@ -1,5 +1,15 @@
 <resources>
-    <string name="app_name">Tareas</string>
-    <string name="etTask">Introduzca la tarea</string>
-    <string name="btnTask">Guardar Tarea</string>
+    <!-- Nombre de la aplicación -->
+    <string name="app_name">Tareas </string>
+
+    <!-- Pantalla principal -->
+    <string name="etTask">Introduzca la tarea </string>
+    <string name="btnTask">Guardar Tarea </string>
+    <string name="search_hint">Buscar tarea </string>
+
+    <!-- Pantalla de edición -->    <string name="etEditTask">Editar tarea </string>
+    <string name="btnSave">Guardar Cambios </string>
+    <string name="btnDelete">Eliminar Tarea </string>
+
+
 </resources>

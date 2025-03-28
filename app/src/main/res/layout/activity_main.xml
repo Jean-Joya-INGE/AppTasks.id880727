@@ -9,6 +9,13 @@
     android:padding="4dp"
     tools:context=".MainActivity">
 
+
+    <SearchView
+        android:id="@+id/searchTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="@string/search_hint" />
+
     <EditText
         android:id="@+id/etTask"
         android:layout_width="match_parent"

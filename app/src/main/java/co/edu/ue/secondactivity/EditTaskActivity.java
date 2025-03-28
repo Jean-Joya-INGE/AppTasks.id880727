@@ -2,7 +2,6 @@ package co.edu.ue.secondactivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -23,29 +22,35 @@ public class EditTaskActivity extends AppCompatActivity {
         btnSave = findViewById(R.id.btnSave);
         btnDelete = findViewById(R.id.btnDelete);
 
-        // Obtener datos de la tarea seleccionada
+        CargarTaskData(); // Obtener los datos de la tarea seleccionada
+        GuardarTaskChanges(); // Guardar cambios
+        EliminarTask(); // Eliminar tarea
+
+    }
+    // Obtener los datos de la tarea seleccionada
+    private void CargarTaskData() {
         Intent intent = getIntent();
         String task = intent.getStringExtra("task");
         position = intent.getIntExtra("position", -1);
-
         etEditTask.setText(task);
-
-        // Guardar cambios
-        btnSave.setOnClickListener(v -> {
-            Intent resultIntent = new Intent();
-            resultIntent.putExtra("updatedTask", etEditTask.getText().toString());
-            resultIntent.putExtra("position", position);
-            setResult(RESULT_OK, resultIntent);
-            finish(); // Cierra la actividad y envía los datos de regreso
-        });
-
-        // Eliminar tarea
-        btnDelete.setOnClickListener(v -> {
-            Intent resultIntent = new Intent();
-            resultIntent.putExtra("delete", true);
-            resultIntent.putExtra("position", position);
-            setResult(RESULT_OK, resultIntent);
-            finish(); // Cierra la actividad y envía los datos de eliminación
-        });
     }
+    // Guardar cambios
+    private void GuardarTaskChanges() {
+        btnSave.setOnClickListener(v -> {
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra("updatedTask", etEditTask.getText().toString());
+        resultIntent.putExtra("position", position);
+        setResult(RESULT_OK, resultIntent);
+        finish();
+    });}
+
+    // Eliminar tarea
+    private void EliminarTask() {
+        btnDelete.setOnClickListener(v -> {
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra("delete", true);
+        resultIntent.putExtra("position", position);
+        setResult(RESULT_OK, resultIntent);
+        finish();
+    });}
 }
